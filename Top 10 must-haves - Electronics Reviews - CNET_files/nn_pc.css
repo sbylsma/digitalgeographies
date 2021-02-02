@@ -1,0 +1,73 @@
+.a1, .a1 td,
+.v1, .v1 td,
+.m1, .m1 td,
+.t1, .t1 td	{ font-size: x-small; }
+
+body,
+.a2, .a2 td,
+.v2, .v2 td,
+.m2, .m2 td,
+.t2, .t2 td	{ font-size: small; }
+
+.a3, .a3 td,
+.v3, .v3 td,
+.m3, .m3 td,
+.t3, .t3 td	{ font-size: medium;}
+
+.a4, .a4 td,
+.v4, .v4 td,
+.m4, .m4 td,
+.t4, .t4 td	{ font-size: 19px; }
+
+.a5, .a5 td,
+.v5, .v5 td,
+.m5, .m5 td,
+.t5, .t5 td	{ font-size: 25px; }
+
+.a6, .a6 td,
+.v6, .v6 td,
+.m6, .m6 td,
+.t6, .t6 td	{ font-size: 32px; }
+
+.txtfld { font-family : monospace;
+		  font-size: 14px }
+.frmel { font-size: 14px }
+
+.f, .f td { font-size: small;
+      font-family: arial, helvetica }
+.f2, .f2 td	{ font-size: medium ;
+      font-family: arial, helvetica }
+.f3, .f3 td	{  font-size: 19px;
+      font-family: arial, helvetica }
+.f4, .f4 td	{ font-size: 24px;
+      font-family: arial, helvetica }
+.f5, .f5 td	{ font-size: x-small;
+      font-family: ms sans serif, geneva, helvetica }
+.f6, .f6 td	{ font-size: x-small;
+      font-family: verdana, geneva, helvetica }
+.f7, .f7 td	{ font-size: x-small;
+      font-family: arial, helvetica }
+
+.cy, .cy a { color: #FC0 }
+.g2, .g2 a { color: #CCC }
+/*
+     FILE ARCHIVED ON 19:04:49 Nov 18, 2001 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:04:43 Feb 02, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 214.365
+  exclusion.robots: 0.22
+  exclusion.robots.policy: 0.202
+  RedisCDXSource: 2.51
+  esindex: 0.013
+  LoadShardBlock: 174.046 (3)
+  PetaboxLoader3.datanode: 192.152 (4)
+  CDXLines.iter: 33.004 (3)
+  load_resource: 102.882
+  PetaboxLoader3.resolve: 26.921
+*/
