@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--This is how you comment for html-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+    <title> My Map </title>
+    <!--This where you put all your dependencies-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+    h1 {text-align: center;}
+    body {
+      margin:0 auto;
+      padding:0 auto;
+      border-width: thick;
+      border-color: black;
+        }
+
+        #map {
+          position: center;
+          top: 5;
+          bottom: 5;
+          width: 700px;
+          height: 500px;
+
+
+            }
+
+    </style>
+  <h1> Northside Berkeley Walk Destinations <h1>
+  </head>
+
+  <body style = 'background-color:lightblue;'>
+    <div id='map'
+         style= 'margin-left: auto; margin-right: auto;'
+         ></div>
+      <script>
+      mapboxgl.accessToken = 'pk.eyJ1Ijoic2FzaGFrYiIsImEiOiJjam1jZGpjZXowZWxsM3ducTU0azBjNGNuIn0.vmcvTGH0L2adgbKb3xThQg';
+
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/sashakb/cklss055k1bsp17lbd4ji0vio', // stylesheet location
+        zoom: 25 // starting zoom
+      });
+
+      var geolocate = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+                       },
+      trackUserLocation: true
+      });
+
+      var geojson = {
+  type: 'FeatureCollection',
+  features: [
+    {
+      type: 'Feature',
+      properties: {
+        'Title': 'Church'
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          -122.263965010643,
+          37.87644551927934
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        'Title': 'Private Bench'
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          -122.25996583700179,
+          37.88264008538603
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        'Title': 'Rose Garden'
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          -122.26289749145506,
+          37.8853032075881
+        ]
+      }
+    }
+  ]
+};
+      var popup = new mapboxgl.Popup();
+      //variables (var) up the top
+      // map.on(functions) at the bottom!
+      map.addControl(geolocate);
+      map.on('load', function() {
+          geolocate.trigger()
+          map.addLayer({
+            id: 'geojson',
+            type: 'symbol',
+            source: {
+              type: 'geojson',
+              data: geojson
+            },
+            layout: {
+              'icon-image': 'monument-11', // more icons here: https://labs.mapbox.com/maki-icons/editor/
+              'icon-allow-overlap': true
+            },
+            paint: {}
+            });
+          });
+      map.on('mousemove', function(e) {
+        var features = map.queryRenderedFeatures(e.point, { layers: ['geojson'] });
+        if (!features.length) {
+          popup.remove();
+          return;
+        }
+        var feature = features[0];
+
+        popup.setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.Title)
+        .addTo(map);
+    });
+     </script>
+
+  </body>
+
+</html>
